@@ -29,7 +29,7 @@ class CompositeTransform(beam.PTransform):
 
     return (
         input_data
-                | "make full address/ unique property ID">> beam.Map(full_address)
+                | "make full address/property ID">> beam.Map(full_address)
                 | "group by property ID" >> beam.GroupByKey()
                 | "convert to object" >> beam.Map(convert_to_object)
 
